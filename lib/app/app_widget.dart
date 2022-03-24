@@ -5,10 +5,17 @@ class AppWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // final MoradorController moradorController;
+
     return MaterialApp(
         home: Scaffold(
       appBar: AppBar(
-        title: const Text("titulo"),
+        title: const Text("Moradores"),
+      ),
+      body: ListView.builder(
+        itemBuilder: (context, index) => const ListTile(
+          leading: Text("Nome Morador"),
+        ),
       ),
     ));
   }
