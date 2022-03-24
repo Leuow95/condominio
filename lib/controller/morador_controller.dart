@@ -1,6 +1,14 @@
+import 'package:condominio/models/morador_model.dart';
 import 'package:condominio/services/morador_service.dart';
-import 'package:dio/dio.dart';
 
 class MoradorController {
-  final MoradorService moradorService = MoradorService(Dio());
+  List<MoradorModel> moradores = [];
+
+  final MoradorService moradorService;
+
+  MoradorController(this.moradorService);
+
+  Future start() async {
+    moradores = await moradorService.getMoradores();
+  }
 }
