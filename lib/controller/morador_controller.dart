@@ -1,7 +1,8 @@
 import 'package:condominio/models/morador_model.dart';
 import 'package:condominio/services/morador_service.dart';
+import 'package:flutter/material.dart';
 
-class MoradorController {
+class MoradorController extends ChangeNotifier {
   List<MoradorModel> moradores = [];
 
   final MoradorService moradorService;
@@ -10,5 +11,6 @@ class MoradorController {
 
   Future start() async {
     moradores = await moradorService.getMoradores();
+    notifyListeners();
   }
 }

@@ -14,7 +14,8 @@ class MoradorService {
     final json = response.data;
     final list = json["data"] as List;
 
-    final moradores = list.map((json) => MoradorModel.fromJson(json)).toList();
+    final moradores =
+        list.map((json) => MoradorModel.fromJson(json["attributes"])).toList();
 
     return moradores;
   }

@@ -1,3 +1,4 @@
+import 'package:condominio/app/home_page.dart';
 import 'package:flutter/material.dart';
 
 class AppWidget extends StatelessWidget {
@@ -5,18 +6,6 @@ class AppWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final MoradorController moradorController;
-
-    return MaterialApp(
-        home: Scaffold(
-      appBar: AppBar(
-        title: const Text("Moradores"),
-      ),
-      body: ListView.builder(
-        itemBuilder: (context, index) => const ListTile(
-          leading: Text("Nome Morador"),
-        ),
-      ),
-    ));
+    return const MaterialApp(home: HomePage());
   }
 }
