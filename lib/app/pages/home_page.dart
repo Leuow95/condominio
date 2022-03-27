@@ -1,3 +1,4 @@
+import 'package:condominio/app/pages/widgets/drawer.dart';
 import 'package:condominio/controller/morador_controller.dart';
 import 'package:condominio/services/morador_service.dart';
 import 'package:dio/dio.dart';
@@ -32,14 +33,18 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    var morador = moradorController.moradores;
     return Scaffold(
       appBar: AppBar(
         title: const Text("Moradores"),
       ),
-      body: ListView.builder(
+      drawer: const CustomDrawer(),
+      body: ListView.separated(
+        separatorBuilder: (context, index) => const Divider(),
         itemCount: moradorController.moradores.length,
         itemBuilder: (context, index) => ListTile(
           title: Text(moradorController.moradores[index].name),
+          subtitle: Text("${morador[index].bloco}"),
           trailing: const Icon(Icons.delete),
         ),
       ),
