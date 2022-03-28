@@ -14,9 +14,12 @@ class MoradorService {
     final json = response.data;
     final list = json["data"] as List;
 
-    final moradores =
-        list.map((json) => MoradorModel.fromJson(json["attributes"])).toList();
+    final moradores = list.map((json) => MoradorModel.fromJson(json)).toList();
 
     return moradores;
+  }
+
+  Future deleteMoradorById({required int idMorador}) async {
+    await dio.delete(baseUrl + "/$idMorador");
   }
 }

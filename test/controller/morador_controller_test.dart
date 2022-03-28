@@ -18,6 +18,7 @@ void main() {
         const Duration(milliseconds: 800),
         () => [
           MoradorModel(
+            id: 2,
             name: "Leonardo",
             apt: 01,
             bloco: 01,
