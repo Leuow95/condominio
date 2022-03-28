@@ -45,8 +45,27 @@ class _HomePageState extends State<HomePage> {
         itemBuilder: (context, index) => ListTile(
           title: Text(moradorController.moradores[index].name),
           subtitle: Text("${morador[index].bloco}"),
-          trailing: const Icon(Icons.delete),
+          trailing: PopupMenuButton(
+            icon: const Icon(
+              Icons.more_vert,
+              color: Colors.red,
+            ),
+            itemBuilder: (BuildContext context) => [
+              const PopupMenuItem(
+                child: Text("Editar"),
+              ),
+              PopupMenuItem(
+                child: const Text("Remover"),
+                onTap: () async => await moradorController.delete(
+                    idMorador: moradorController.moradores[index].id),
+              ),
+            ],
+          ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: const Icon(Icons.add),
       ),
     );
   }
