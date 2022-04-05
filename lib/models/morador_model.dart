@@ -19,4 +19,11 @@ class MoradorModel {
       apt: json["attributes"]["apt"],
     );
   }
+
+  Map<String, dynamic> toJson() => {
+        "id": id,
+        "name": name,
+        "bloco": bloco,
+        "apt": apt,
+      };
 }
