@@ -18,4 +18,9 @@ class MoradorController extends ChangeNotifier {
     await moradorService.deleteMoradorById(idMorador: idMorador);
     // notifyListeners();
   }
+
+  Future addMorador({required MoradorModel morador}) async {
+    await moradorService.addMorador(morador: morador);
+    notifyListeners();
+  }
 }
