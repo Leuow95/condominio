@@ -22,4 +22,11 @@ class MoradorService {
   Future deleteMoradorById({required int idMorador}) async {
     await dio.delete(baseUrl + "/$idMorador");
   }
+
+  Future addMorador({required MoradorModel morador}) async {
+    await dio.post(
+      baseUrl + "/moradors",
+      data: morador.toJson(),
+    );
+  }
 }
