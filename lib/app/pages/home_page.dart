@@ -1,5 +1,6 @@
 import 'package:condominio/app/pages/widgets/drawer.dart';
 import 'package:condominio/controller/morador_controller.dart';
+import 'package:condominio/routes/routes.dart';
 import 'package:condominio/services/morador_service.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
@@ -64,7 +65,11 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).pushNamed(
+            RoutesConstants.addMoradorPage,
+          );
+        },
         child: const Icon(Icons.add),
       ),
     );
