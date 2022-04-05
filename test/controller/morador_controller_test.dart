@@ -29,7 +29,6 @@ void main() {
 
     await controller.start();
 
-    // expect(controller.moradores[0].name, "Leonardo");
     expect(controller.moradores, isA<List<MoradorModel>>());
   });
 
@@ -39,7 +38,6 @@ void main() {
 
     await controller.start();
 
-    // expect(controller.moradores[0].name, "Leonardo");
     expect(controller.moradores, isA<List<MoradorModel>>());
   });
 }
