@@ -1,3 +1,4 @@
+import 'package:condominio/app/pages/add_morador_page.dart';
 import 'package:condominio/app/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
@@ -10,6 +11,7 @@ class AppWidget extends StatelessWidget {
       initialRoute: '/homepage',
       routes: {
         '/homepage': (context) => const HomePage(),
+        '/add-morador': (context) => const AddMoradorPage(),
       },
     );
   }
